@@ -6,7 +6,8 @@ category: nosql
 tags: [mongodb, maizi]
 ---
 
-MongoDB更新非常快，再好的书或者技术网站都有可能跟不上形势，建议直接看官网。但这里把常用的整理了一下，大家求快可以直接看本网页。
+本笔记适用于我在Maizi许愿开设的课程MongoDB最佳实践。
+MongoDB更新非常快，再好的书或者技术网站都有可能跟不上形势，建议直接看官网。但这里我把课程里的整理了一下（不完全），方便大家复制粘贴。
 
 1.  安装命令
 {% highlight bash %}
@@ -69,7 +70,7 @@ db.students.find({school:{$exists:false}})
 基于正则表达式的逻辑查询
 db.students.find({name: /^小/})
 db.students.find({name: /.*四/})
-{% endhighlight %}
+
 ```
 
 3.  Update命令
