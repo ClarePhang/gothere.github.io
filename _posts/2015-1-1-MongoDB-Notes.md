@@ -18,19 +18,19 @@ sudo apt-get install -y mongodb-org
 {% endhighlight %}
 
 Try MongoDB: http://try.mongodb.org
-```
-停止服务： 
+{% highlight bash %}
+#停止服务： 
    sudo service mongod stop
-启动服务：
+#启动服务：
    sudo service mongod start
-切换数据库
+#切换数据库
    use  数据库名  
-```
+{% endhighlight %}
 
 2.  插入命令
 
 插入数据到students collection
-```
+{% highlight javascript %}
 db.students.insert({name: "张三", school: {name: "清华大学", city: "北京"}, age: 19, gpa: 3.97})
 
 db.students.insert({name: "李四", school: {name: "北京大学", city: "北京"}, age: 20, gpa: 3.3})
@@ -43,7 +43,7 @@ db.students.insert({name: "小马", school: {name: "交通大学", city: "西安
 
 db.students.insert({name: "小朱"})
 
-```
+{% endhighlight %}
 
 3.  查询命令
 ```
