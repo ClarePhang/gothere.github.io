@@ -46,7 +46,7 @@ db.students.insert({name: "小朱"})
 {% endhighlight %}
 
 3.  查询命令
-```
+{% highlight javascript %}
 值精确匹配的查询
 db.students.find({name: "张三"})
 两个条件（逻辑与）
@@ -71,7 +71,7 @@ db.students.find({school:{$exists:false}})
 db.students.find({name: /^小/})
 db.students.find({name: /.*四/})
 
-```
+{% endhighlight %}
 
 3.  Update命令
 暂无
@@ -83,7 +83,7 @@ http://docs.mongodb.org/manual/data-modeling/
 
 
 6.  内嵌数组查询
-```
+{% highlight javascript %}
 db.students.insert({name: "张三", school: {name: "清华大学", city: "北京"}, courses:[{name:"MongoDB", grade:88, quiz:[9,8,9,10]},{name:"Java", grade:99,quiz:[3,2,1,5]}], age: 19, gpa: 3.97})
 
 db.students.insert({name: "李四", school: {name: "北京大学", city: "北京"}, courses:[{name:"MongoDB", grade:86, quiz:[5,4,3,7]},{name:"Java", grade:92}, {name:"C++", grade:65}], age: 20, gpa: 3.3})
@@ -95,10 +95,10 @@ db.students.insert({name: "小牛", school: {name: "哈工大", city: "哈尔滨
 db.students.insert({name: "小马", school: {name: "交通大学", city: "西安"}, courses:[{name:"MongoDB", grade:96, quiz:[5,4,3,7]}], age: 21, gpa: 3.70})
 
 db.students.insert({name: "小朱"})
-```
+{% endhighlight %}
 
 7.  地理位置查询
-```
+{% highlight javascript %}
 db.pois.insert({name:"AAA Store", loc:{type:"Point", coordinates:[70,30]}})
 db.pois.insert({name:"BBB Bank", loc:{type:"Point", coordinates:[69.99,30.01]}})
 db.pois.insert({name:"CCC Park", loc:{type:"Polygon", coordinates:[[[70,30],[71,31],[71,30],[70,30]]]}})
@@ -135,31 +135,33 @@ db.runCommand(
      maxDistance: 7000
    }
 )
-```
+{% endhighlight %}
 9.  全文搜索
-```
+{% highlight javascript %}
 db.text.insert({content:"text performs a text search on the content of the fields indexed with a text index."})
 db.text.insert({content:"When dealing with a small number of documents, it is possible for the full-text-search engine to directly scan the contents of the documents with each query, a strategy called 'serial scanning.' This is what some rudimentary tools, such as grep, do when searching."})
 db.text.insert({content:"Soros enjoys playing mongo."})
 db.text.insert({content:"Why don't you use mongo-db?"})
 
-```
+{% endhighlight %}
 
 
 
 10. 学生成绩Group命令
-```
+{% highlight javascript %}
 db.students.group({
         key:{age:1},
         cond: {age:{$exists:true}},
         reduce:function(cur, result) { result.count += 1; result.total_gpa += cur.gpa; result.ava_gpa = result.total_gpa / result.count;},
         initial: { count: 0 , total_gpa: 0}
     })
-```
+{% endhighlight %}
 11. 数据聚合 -- 流水线
+
+{% highlight javascript %}
 各年龄段平均GPA计算和排序
 
-```
+
 db.students.aggregate([
     {$match:{age:{$exists:true}}}, 
     {$group:{_id:"$age", count: {$sum:1}, total_gpa:{$sum:"$gpa"}}},
@@ -188,10 +190,10 @@ db.students.aggregate(
         {$sort: {cc:-1}}
     ]
 )
-```
+{% endhighlight %}
 
 12 数据聚合MapReduce
-```
+{% highlight javascript %}
 按age分组计算平均gpa (错误)
 db.students.mapReduce(
     function(){
@@ -278,4 +280,4 @@ db.students.aggregate([
     
 ])
 
-```
+{% endhighlight %}
