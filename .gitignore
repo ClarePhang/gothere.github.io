@@ -9,3 +9,4 @@ node_modules
 package.json
 images/Thumbs.db
 *.exe
+*.class
