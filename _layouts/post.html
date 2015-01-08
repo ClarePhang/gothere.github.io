@@ -23,14 +23,12 @@ layout: default
   <h1>{{ page.title }}</h1>
 
   <div class="entry">
-  <p id="post-meta">
-    {{page.tags}}
+  <p class="post-tags">
     {% if page.tags.size > 0 %}
       {% for post_tag in page.tags %}
         {{post_tag}}          
       {% endfor %}
     {% endif %}
-    {{ tags_content }}
   </p>
     {{ content }}
   </div>
