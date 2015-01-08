@@ -6,7 +6,7 @@ category: nosql
 tags: [mongodb, maizi]
 ---
 
-主要还得看官网
+MongoDB更新非常快，再好的书或者技术网站都有可能跟不上形势，建议直接看官网。但这里把常用的整理了一下，大家求快可以直接看本网页。
 
 1.  安装命令
 {% highlight bash %}
@@ -17,17 +17,19 @@ sudo apt-get install -y mongodb-org
 {% endhighlight %}
 
 Try MongoDB: http://try.mongodb.org
-
-              停止服务： 
-                   sudo service mongod stop
-              启动服务：
-                   sudo service mongod start
-              切换数据库
-                   use  数据库名  
+···
+停止服务： 
+   sudo service mongod stop
+启动服务：
+   sudo service mongod start
+切换数据库
+   use  数据库名  
+···
 
 2.  插入命令
 
 插入数据到students collection
+{% highlight javascript %}
 db.students.insert({name: "张三", school: {name: "清华大学", city: "北京"}, age: 19, gpa: 3.97})
 
 db.students.insert({name: "李四", school: {name: "北京大学", city: "北京"}, age: 20, gpa: 3.3})
@@ -39,10 +41,10 @@ db.students.insert({name: "小牛", school: {name: "哈工大", city: "哈尔滨
 db.students.insert({name: "小马", school: {name: "交通大学", city: "西安"}, age: 21, gpa: 3.70})
 
 db.students.insert({name: "小朱"})
-
+{% endhighlight %}
 
 3.  查询命令
-
+{% highlight javascript %}
 值精确匹配的查询
 db.students.find({name: "张三"})
 两个条件（逻辑与）
@@ -66,7 +68,7 @@ db.students.find({school:{$exists:false}})
 基于正则表达式的逻辑查询
 db.students.find({name: /^小/})
 db.students.find({name: /.*四/})
-
+{% endhighlight %}
 
 3.  Update命令
 
