@@ -2,7 +2,8 @@
 layout: post
 title: MongoDB最佳实践笔记
 published: true
-categories: [MongoDB, Maizi]
+category: MongoDB
+tags: [MongoDB, Maizi]
 ---
 
 主要还得看官网
