@@ -24,9 +24,9 @@ layout: default
 
   <div class="entry">
   <p id="post-meta">
-    {{post.tags}}
-    {% if post.tags.size > 0 %}
-      {% for post_tag in post.tags %}
+    {{page.tags}}
+    {% if page.tags.size > 0 %}
+      {% for post_tag in page.tags %}
         {{post_tag}}          
       {% endfor %}
     {% endif %}
