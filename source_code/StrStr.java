@@ -2,7 +2,7 @@
 * @Author: Beinan
 * @Date:   2015-01-08 18:04:08
 * @Last Modified by:   Beinan
-* @Last Modified time: 2015-01-08 18:27:53
+* @Last Modified time: 2015-01-08 19:36:38
 */
 
 public class StrStr {
@@ -32,7 +32,10 @@ public class StrStr {
     //test script
     public static void main(String[] args) {
       System.out.println(strStr("abcde", "cde"));
-      System.out.println(strStr("abcde", "cdef"));       
+      System.out.println(strStr("abcde", "cdef"));
+      System.out.println(strStr("abcde", ""));
+      System.out.println(strStr("", ""));
+                    
     }
 
 
