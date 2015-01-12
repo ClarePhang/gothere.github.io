@@ -6,7 +6,7 @@ category: nosql
 tags: [mongodb, maizi]
 ---
 
-本笔记适用于我在Maizi许愿开设的课程MongoDB最佳实践。
+本笔记适用于我在Maizi学院开设的课程MongoDB最佳实践。
 MongoDB更新非常快，再好的书或者技术网站都有可能跟不上形势，建议直接看官网。但这里我把课程里的整理了一下（不完全），方便大家复制粘贴。
 
 1.  安装命令
